@@ -13,8 +13,7 @@ export class Userdetail {
   post(user: any) {
     return this.http.post(
       'https://counsellorproject.onrender.com/login',
-      user,
-      { withCredentials: true }
+      user
     );
   }
 
@@ -30,24 +29,21 @@ export class Userdetail {
   addenq(user: any) {
     return this.http.post(
       'https://counsellorproject.onrender.com/enquiry',
-      user,
-      { withCredentials: true }
+      user
     );
   }
 
   // VIEW ENQUIRIES
   view() {
     return this.http.get<any[]>(
-      `https://counsellorproject.onrender.com/enquiries/${this.counsellorId()}`,
-      { withCredentials: true }
+      `https://counsellorproject.onrender.com/enquiries/${this.counsellorId()}`
     );
   }
 
   // DASHBOARD DATA
   dashboard() {
     return this.http.get(
-      `https://counsellorproject.onrender.com/dashboard/${this.counsellorId()}`,
-      { withCredentials: true }
+      `https://counsellorproject.onrender.com/dashboard/${this.counsellorId()}`
     );
   }
 
@@ -55,8 +51,7 @@ export class Userdetail {
   updateStatus(data: { enquiryId: number; status: string }) {
     return this.http.post(
       'https://counsellorproject.onrender.com/statusupdate',
-      data,
-      { withCredentials: true }
+      data
     );
   }
 }
